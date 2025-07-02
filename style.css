@@ -180,14 +180,14 @@ nav .nav-link.active {
 
 @media (max-width: 600px) {
   #hero {
-    min-height: 100dvh;
-    height: 100dvh;
-    padding-top: 5.5rem;
+    min-height: 100svh;
+    height: 100svh;
+    padding-top: 0;
     justify-content: flex-end;
   }
   #hero header img,
   #hero img {
-    max-width: 90vw !important;
+    max-width: 92vw !important;
     height: auto !important;
     object-fit: contain !important;
     margin-top: 0 !important;
@@ -195,7 +195,7 @@ nav .nav-link.active {
     display: block;
   }
   #hero .relative.z-20 {
-    min-height: 60dvh;
+    min-height: 0;
     justify-content: flex-end;
   }
 }
