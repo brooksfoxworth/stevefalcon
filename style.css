@@ -1,0 +1,394 @@
+/* Unique hypnotic yellow background effects for each section */
+
+/* Section-specific yellow particle containers */
+.about-particle-container,
+.meet-particle-container,
+.tour-particle-container,
+.gallery-particle-container,
+.contact-particle-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Ensure section content is above backgrounds */
+#about-show > :not(.about-particle-container),
+#meet-steve > :not(.meet-particle-container),
+#tour-dates > :not(.tour-particle-container),
+#gallery > :not(.gallery-particle-container),
+#contact > :not(.contact-particle-container) {
+  position: relative;
+  z-index: 1;
+}
+/* --- Foundational Styles --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Yellowtail&display=swap');
+
+body {
+  background-color: #060914; /* Dark navy background */
+  color: #e0e0e0; /* Light gray text for readability */
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding-top: 4rem; /* Adds space for the fixed header */
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* --- Header & Navigation Styles --- */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4rem; /* 64px */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  background-color: rgba(6, 9, 20, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 50;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav .nav-link {
+  color: #e0e0e0;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav .nav-link:hover {
+  background-color: rgba(251, 191, 36, 0.1);
+  color: #fbbf24; /* Amber color on hover */
+}
+
+nav .nav-link.active {
+  color: #fbbf24; /* Amber color for the active link */
+  font-weight: 700;
+}
+
+/* --- About Section Styles --- */
+.about {
+  padding: 4rem 0;
+  background-color: #0a0f1f; /* Slightly lighter dark navy */
+}
+
+.about h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* Space between image and text */
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px; /* Slightly rounded corners for the image */
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column; /* Stack image and text on smaller screens */
+    text-align: center;
+  }
+
+  .about-image {
+    margin-bottom: 1.5rem;
+  }
+  /* Make Show Highlights section fit perfectly edge-to-edge on mobile */
+  #gallery .max-w-7xl,
+  #gallery .max-w-7xl {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    box-sizing: border-box;
+  }
+  #gallery .swiper {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  #gallery .swiper-wrapper {
+    width: 100vw !important;
+    max-width: 100vw !important;
+  }
+  #gallery .swiper-slide {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  #gallery .aspect-video {
+    border-radius: 0.75rem;
+    margin: 0 auto;
+  }
+  #gallery .aspect-video iframe {
+    border-radius: 0.75rem;
+  }
+  #gallery .swiper-pagination {
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+    margin: 0 auto !important;
+  }
+}
+
+/* --- Hero Section Styles (Consolidated) --- */
+#hero {
+  background: url('path/to/your/hero-image.jpg') no-repeat center center/cover;
+  color: #ffffff;
+  position: relative; /* Needed for overlay */
+  height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  #hero {
+    min-height: 100dvh;
+    height: 100dvh;
+    padding-top: 5.5rem;
+    justify-content: flex-end;
+  }
+  #hero header img,
+  #hero img {
+    max-width: 90vw !important;
+    height: auto !important;
+    object-fit: contain !important;
+    margin-top: 0 !important;
+    margin-bottom: 0.5rem !important;
+    display: block;
+  }
+  #hero .relative.z-20 {
+    min-height: 60dvh;
+    justify-content: flex-end;
+  }
+}
+}
+
+/* Overlay for readability */
+#hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Ensure content is above the overlay */
+#hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+#hero h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin: 0;
+  line-height: 1.2;
+}
+
+#hero p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+#hero .yellowtail-font {
+  font-family: 'Yellowtail', cursive;
+  color: #fbbf24;
+  font-size: 4.5rem;
+}
+
+#hero a.swirl-button {
+  display: inline-block;
+  background-color: #f59e0b; /* Amber 500 */
+  color: #060914;
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 2rem;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+#hero a.swirl-button:hover {
+  background-color: #fbbf24; /* Amber 400 */
+  transform: translateY(-3px);
+}
+
+/* --- General Section Styles --- */
+main section {
+  padding: 5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+section h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #6366f1; /* Indigo color */
+}
+
+section h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #fbbf24; /* Amber color */
+    margin-bottom: 1rem;
+}
+
+section p {
+    line-height: 1.6;
+    max-width: 650px; /* Makes long text easier to read */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Scroll Animation Prep --- */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Hypnotic Swirl Effect (Neon Yellow Glow) --- */
+.hypnotic-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Place above section background, but below content */
+  opacity: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hypnotic-background svg {
+  width: 180%;
+  height: 180%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate-swirl 16s linear infinite;
+  filter: drop-shadow(0 0 32px #fff700) drop-shadow(0 0 64px #fff700) drop-shadow(0 0 24px #fff700);
+  opacity: 0.18;
+}
+
+.hypnotic-background #spiral {
+  stroke: #fff700;
+  stroke-width: 5;
+  filter: drop-shadow(0 0 16px #fff700) drop-shadow(0 0 32px #fff700);
+}
+
+@keyframes rotate-swirl {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+
+#about-show {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* --- Subtle Accent Animations & Decorative Touches --- */
+.glow-accent {
+  box-shadow: 0 0 16px 2px #fbbf24cc, 0 0 32px 8px #4f46e5cc;
+  border-radius: 12px;
+  transition: box-shadow 0.4s;
+}
+.glow-accent:hover {
+  box-shadow: 0 0 32px 8px #fbbf24, 0 0 48px 16px #4f46e5;
+}
+
+.decorative-divider {
+  width: 120px;
+  height: 6px;
+  margin: 2.5rem auto 2rem auto;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #fbbf24 0%, #4f46e5 100%);
+  opacity: 0.7;
+  box-shadow: 0 2px 12px #fbbf2444, 0 0 8px #4f46e544;
+}
+
+.funny-emoji {
+  font-size: 2.2rem;
+  filter: drop-shadow(0 2px 8px #fbbf24cc);
+  margin: 0 0.25em;
+  vertical-align: middle;
+  animation: emoji-bounce 2.2s infinite cubic-bezier(.6,-0.28,.74,.05);
+}
+@keyframes emoji-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px) scale(1.1); }
+}
+
+.accent-border {
+  border: 2px solid #fbbf24;
+  border-radius: 10px;
+  box-shadow: 0 0 12px #fbbf2444;
+}
+
+.accent-bg {
+  background: linear-gradient(120deg, #fbbf2422 0%, #4f46e522 100%);
+}
+
+.footer-heart {
+  filter: drop-shadow(0 0 8px #fbbf24cc);
+  animation: pulse-heart 1.2s infinite alternate;
+}
+@keyframes pulse-heart {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.18); }
+}
