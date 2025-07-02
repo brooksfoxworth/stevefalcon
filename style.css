@@ -392,3 +392,40 @@ section p {
   0% { transform: scale(1); }
   100% { transform: scale(1.18); }
 }
+
+/* =================================== */
+/* Mobile Hero Section Fix & Polish    */
+/* =================================== */
+
+@media (max-width: 768px) {
+  /* This is the main fix. Instead of 100vh (which is the full screen height),
+    we use 100dvh (dynamic viewport height). This automatically adjusts for
+    browser UI like address bars and navigation, which is often the cause of the cutoff.
+  */
+  #hero {
+    min-height: 100dvh; 
+    height: auto; /* Override any fixed height */
+  }
+
+  /*
+    This adjusts the padding and alignment to give your logo and
+    headline more space at the top and ensures they are centered better
+    within the visible area.
+  */
+  #hero .relative.z-10 {
+    justify-content: center; /* Change from justify-end to center */
+    padding-top: 5rem;      /* Add more space at the top */
+    padding-bottom: 2rem;   /* Reduce space at the bottom if needed */
+  }
+
+  /* This makes the main headline text slightly smaller on mobile
+    so it fits better and doesn't feel overwhelming.
+  */
+  #hero h1 {
+    font-size: 2.8rem; /* Slightly smaller than the desktop's 3.5rem */
+  }
+
+  #hero h1 .yellowtail-font {
+    font-size: 3.5rem; /* Correspondingly smaller */
+  }
+}
